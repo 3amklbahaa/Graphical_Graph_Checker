@@ -2,6 +2,8 @@
 #define N 50
 int inputgraph(int t[N][N], int n){
     int i, j, start=0, end=0;
+    printf("plz enter n: ");
+    scanf("%d",&n);
     for(i=0;i<n;i++){
         for(j=0;j<n;j++){
             t[i][j]=0;
@@ -56,7 +58,7 @@ int isgraphical(int t[N][N],int n, int z[N]){
     }
 }
 int main(){
-    int n=4, t[N][N], z[N];
+    int n, t[N][N], z[N];
     inputgraph(t,n);
     printdegree(t,n,z);
     isgraphical(t,n,z);
