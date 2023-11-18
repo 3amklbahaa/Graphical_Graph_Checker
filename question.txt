@@ -1,0 +1,5 @@
+Write a program that creates a graph with inputs from user.
+
+Complete the program by printing the degrees of all vertices.
+
+Write a program that tests if a vector inputted by the user is graphical or no.
