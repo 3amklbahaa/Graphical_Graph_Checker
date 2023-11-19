@@ -1,10 +1,8 @@
 //3mklbahaa
 #include <stdio.h>
 #define N 50
-int inputgraph(int t[N][N], int n, int n_edges){
+void inputgraph(int t[N][N], int n, int n_edges){
     int i, j, start=0, end=0;
-    printf("plz enter n: ");
-    scanf("%d",&n);
     printf("plz enter the n_edges: ");
     scanf("%d",&n_edges);
     for(i=0;i<n;i++){
@@ -39,15 +37,17 @@ void printdegree(int t[N][N], int n, int n_edges, int z[N]){
         }
     }
 }
-int isgraphical(int t[N][N],int n, int n_edges, int z[N]){
+void isgraphical(int t[N][N],int n, int n_edges, int z[N]){
     int i, j=1, res=0, sum=0;
     for(i=0;i<n;i++){
         if(z[i]>0){
             sum=z[i];
             z[i]=0;
-            z[i+j]--;
-            j++;
-            sum --;
+
+            while(j<=sum){
+                z[i+j]--;
+                j++;
+            }
         }
     }
     for(i=0;i<n;i++){
@@ -62,6 +62,8 @@ int isgraphical(int t[N][N],int n, int n_edges, int z[N]){
 }
 int main(){
     int n, t[N][N], z[N], n_edges;
+    printf("plz enter n: ");
+    scanf("%d",&n);
     inputgraph(t,n, n_edges);
     printdegree(t,n,n_edges,z);
     isgraphical(t,n,n_edges,z);
