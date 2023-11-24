@@ -14,6 +14,7 @@ void inputgraph(int t[N][N], int n, int n_edges){
         printf("plz enter startpoint and endpoint: ");
         scanf("%d%d",&start,&end);
         t[start][end]=1;
+        t[end][start]=1;
     }
     for(i=0;i<n;i++){
         for(j=0;j<n;j++){
